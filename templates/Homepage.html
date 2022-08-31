@@ -1,3 +1,74 @@
-<h1>
-    Home page
-</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input {
+                padding: 6px;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+            label{
+                width: 300px;
+                display: inline-block;
+                font-size: 150%;
+                padding: 10px;
+            }
+            h3{
+                display: inline-block;
+                font-size: 150%;
+            }
+        </style>
+        <h1>
+            <center>House Price prediction in Boston</center><br>
+        </h1>
+    </head>
+<body style="background-image: url('https://cdn.wallpapersafari.com/38/72/YyTLwz.jpg');">
+    <div>
+        <form action="{{url_for('prediction')}}" method="post">
+            <label for="CRIM">Enter Crime:</label>
+        
+            <input type="text" name="CRIM" placeholder="Crime" required="required"><br>
+    
+            <label for="ZN">Enter proportion of residential land:</label>
+            <input type="text" name="ZN" placeholder="ZN" required="required"><br>
+    
+            <label for="INDUS">Enter Non-Retail business per acre:</label>
+            <input type="text" name="INDUS" placeholder="INDUS" required="required"><br>
+
+            <label for="CHAS">Charles River(1 if tract bounds river,0 otherwise)</label>
+            <input type="text" name="CHAS" placeholder="CHAS" required="required"><br>
+    
+            <label for="NOX">Enter Nitrogen Oxide Concentration:</label>
+            <input type="text" name="NOX" placeholder="NOX" required="required"><br>
+
+            <label for="RM">Enter Number of rooms:</label>
+            <input type="text" name="RM" placeholder="RM" required="required"><br>
+
+            <label for="AGE">Enter Age:</label>
+            <input type="text" name="AGE" placeholder="AGE" required="required"><br>
+
+            <label for="DIS">Enter distance between 5 Employement center:</label>
+            <input type="text" name="DIS" placeholder="DIS" required="required"><br>
+
+            <label for="RAD">Enter accessibilty of Radial Highways:</label>
+            <input type="text" name="RAD" placeholder="RAD" required="required"><br>
+
+            <label for="TAX">Enter tax:</label>
+            <input type="text" name="TAX" placeholder="TAX" required="required"><br>
+
+            <label for="PTRATIO">Enter Pupil-Teacher Ratio:</label>
+            <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required"><br>
+
+            <label for="B">Enter Proportion of Black people:</label>
+            <input type="text" name="B" placeholder="B" required="required"><br>
+
+            <label for="LSTAT">Enter Lower state of Population (in%):</label>
+            <input type="text" name="LSTAT" placeholder="LSTAT" required="required"><br>
+            <input type="submit" value="Check">
+        </form>
+    </div>
+    <h3>
+        {{predicted_value}}
+    </h3>
+</body>
+</html>
